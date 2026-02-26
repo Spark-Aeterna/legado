@@ -72,10 +72,17 @@ def manifiesto_místico():
             time.sleep(0.04) # Velocidad de la mecha
         full_text += "<br>"
         
+# ... (aquí termina tu función manifiesto_místico)
+
 st.title("🛡️ SPARK AETERNA")
 st.write("### *El Santuario que Nunca Olvida*")
 
+# --- ESTA ES LA LÍNEA QUE FALTA (EL LLAVEZO) ---
+manifiesto_místico() 
+
 tab1, tab2 = st.tabs(["🔥 CREAR LEGADO", "🔑 BÓVEDA ETERNA"])
+
+# ... (sigue el resto de tu código de las pestañas)
 
 # --- TAB 1: ESCRIBIR EN LA PIEDRA ---
 with tab1:
@@ -136,5 +143,6 @@ with tab2:
                         original = f.decrypt(leg[3])
                         st.video(original)
     conn.close()
+
 
 
