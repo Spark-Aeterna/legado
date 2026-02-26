@@ -4,6 +4,7 @@ import sqlite3
 from datetime import date
 from cryptography.fernet import Fernet
 
+
 # --- CONFIGURACIÓN DE LA "PIEDRA" (BASE DE DATOS) ---
 def conectar_db():
     conn = sqlite3.connect('legados_eternos.db', check_same_thread=False)
@@ -30,7 +31,47 @@ st.markdown("""
     .stExpander { background-color: #1e2130; border: 1px solid #d4af37; border-radius: 10px; }
     </style>
     """, unsafe_allow_html=True)
+import time
 
+# --- FUNCIÓN MÍSTICA DE REVELACIÓN ---
+def manifiesto_místico():
+    texto = [
+        "La eficiencia es la esencia de la diferencia.",
+        "No somos cenizas de lo que fue, sino la chispa de lo que será.",
+        "Spark Aeterna existe porque el amor no debe ser víctima del tiempo,",
+        "ni el legado un rehén del olvido.",
+        "Somos la chispa que surge hoy y que, aunque parezca efímera,",
+        "tiene el poder de encender la hoguera del mañana.",
+        "Nuestra voz, nuestra mirada y nuestros secretos son el combustible",
+        "que mantendrá el fuego ardiendo en el corazón de quienes amamos,",
+        "mucho después de que nosotros nos hayamos convertido en luz.",
+        "Sparkear es encender la eternidad."
+    ]
+    
+    container = st.empty()
+    full_text = ""
+    
+    # CSS para el brillo de la "chispa"
+    st.markdown("""
+        <style>
+        .chispa-text {
+            color: #d4af37;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            text-shadow: 0 0 10px #ffaa00;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    for line in texto:
+        for char in line:
+            full_text += char
+            container.markdown(f'<p class="chispa-text">{full_text} 🕯️</p>', unsafe_allow_html=True)
+            time.sleep(0.04) # Velocidad de la mecha
+        full_text += "<br>"
+        
 st.title("🛡️ SPARK AETERNA")
 st.write("### *El Santuario que Nunca Olvida*")
 
@@ -95,4 +136,5 @@ with tab2:
                         original = f.decrypt(leg[3])
                         st.video(original)
     conn.close()
+
 
