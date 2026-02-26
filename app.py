@@ -83,7 +83,7 @@ with tab2:
         c.execute("SELECT categoria, nombre, fecha, contenido, llave, archivo FROM chispas WHERE nombre = ?", (seleccion,))
         legados = c.fetchall()
         
-        for leg en legados:
+        for leg in legados:
             with st.expander(f"📦 {leg[0]} - {leg[1]} ({leg[5]})"):
                 hoy = str(date.today())
                 if hoy < leg[2]:
@@ -95,3 +95,4 @@ with tab2:
                         original = f.decrypt(leg[3])
                         st.video(original)
     conn.close()
+
